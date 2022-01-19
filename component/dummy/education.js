@@ -1,5 +1,5 @@
 import intern from "../../public/djp.png";
-import dbss from "../../public/Dumbways.png";
+import dbss from "../../public/dumbways.png";
 import stmik from "../../public/stmik.png";
 
 import Image from "next/image";
