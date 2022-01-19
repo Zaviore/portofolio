@@ -2,7 +2,6 @@ import React from "react";
 import { education } from "../../dummy/education";
 import Image from "next/image";
 import circle from "../../../public/elipse.png";
-import dot from "../../../public/dot.png";
 
 function EducationSelection() {
   return (
