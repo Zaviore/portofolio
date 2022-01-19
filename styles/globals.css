@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ul{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  max-width: 100%;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+ 
+  
+}li{
+   
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 0 4px;
+    white-space: nowrap;
+  }
+  .content_bg {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    background-color: rgb(221, 221, 221);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 70px;
+    left: auto;
+ 
+    min-height: auto;
+  }
+  .bg-step {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    background-image: url("../public/bg-forground.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  
+    left: 0;
+    
+ 
+    min-height: auto;
+  }
+  div::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none; 
+    background: transparent;
+  }
+  ul::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none; 
+    background: transparent;
+  }
+  .hidden-jojo{
+    display: none;
+  }
+  ul {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
