@@ -4,36 +4,54 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <div className='max-w-full -mt-10 bottom-0'>
-      <div className='bg-cs-blue-light  md:p-20 rounded-t-3xl '>
-        <div className='grid md:grid-cols-5'>
-          <div className='md:col-span-2'>
-            <Image src={Logo} width='80px' height='70px' />
-            <p className='md:mr-32 mt-4'>
-              jl. jend sudirman kav 76-78 sudirman plaza.gedung marein 12910
-              jakarta selatan
-            </p>
-          </div>
-          <div className=''>
-            <p className='font-bold mb-3 '>Category</p>
-            <div className='grid grid-cols-2'>
-              <p className=''>Donat</p>
-              <p className=''>Cupcake</p>
-              <p className=''>Marsmellow</p>
-              <p className=''>Onigiri</p>
-              <p className=''>Kebab</p>
+    <div className='max-w-full -mt-10 bottom-0 text-white'>
+      <div className='bg-cs-footer  md:p-20 rounded-t-3xl '>
+        <div className='grid md:grid-cols-12'>
+          <div className='md:col-span-4'>
+            <div className='px-5'>
+              <div className='py-3'>
+                <h1 className='text-3xl font-bold '>Our Office</h1>
+              </div>
+              <p>zamhadi21@gmail.com</p>
+              <p className='md:mr-32 mt-4'>jl. Pakujaya Permai, serpong.</p>
+              <p>Tanggerang selatan</p>
             </div>
           </div>
-          <div>
-            <p className='font-bold mb-3 '>About</p>
-            <p className=''>Contact US</p>
-            <p className=''>FAQ</p>
-            <p className=''>Report Problem</p>
+
+          <div className='md:col-span-4 '>
+            <div className='px-5'>
+              <div className='py-3'>
+                <h1 className='text-3xl font-bold '>
+                  What We Can Assist You With ?
+                </h1>
+                <p>(you can send some question here.)</p>
+              </div>
+
+              <div className='flex'>
+                <div className='w-full'>
+                  <div>
+                    <input placeholder='nama' className='my-1 p-2 w-full' />
+                  </div>
+                  <div>
+                    <input placeholder='email' className='my-1 p-2 w-full' />
+                  </div>
+                  <div>
+                    <textarea
+                      className='my-1 w-full p-2'
+                      placeholder='Message'
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <p>
-              Get now free 50% discount for alll products on your first order
-            </p>
+          <div className='md:col-span-3'>
+            <div className='px-5'>
+              {" "}
+              <div className='py-3'>
+                <h1 className='text-3xl font-bold '>Keep Connected</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>

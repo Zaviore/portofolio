@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { skill } from "../../dummy/skill";
+
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/outline";
 
 function Skillselection() {
@@ -59,9 +60,9 @@ function Skillselection() {
             className='snap-x scroll-smooth'
           >
             {" "}
-            {skill.map((itm) => (
+            {skill.map((itm, index) => (
               <li className='py-2 md:px-3 min-w-[100px] text-center mr-20 mt-5 snap-center'>
-                <div>{itm.name}</div>
+                <div key={index}>{itm.name}</div>
                 <div>{itm.icon}</div>
               </li>
             ))}

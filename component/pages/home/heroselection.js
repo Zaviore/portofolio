@@ -12,7 +12,7 @@ function Heroselection() {
     <div>
       <div className='relative max-w-full '>
         <div className='content_bg'></div>
-        <div className='max-w-7xl mx-auto px-4 md:grid grid-cols-2 md:min-h-[600px] gap-4 items-center sm:px-6'>
+        <div className='max-w-7xl mx-auto px-4 md:grid grid-cols-2 gap-4 items-center sm:px-6'>
           <div className=''>
             <p className='text-black text-3xl font-bold'>Hi, My Name</p>
             <p className='text-cs-purple-dark text-7xl font-bold'>Zamhadi</p>
@@ -63,7 +63,7 @@ function Heroselection() {
             </div>
           </div>
           <div className='relative mb-16'>
-            <div className='z-10 absolute' ref={ref}>
+            <div className='z-10 absolute mt-8' ref={ref}>
               <div className='ml-20 animate-pulse'>
                 <Image src={effect} width='100px' height='100px' />
               </div>

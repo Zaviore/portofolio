@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
+import ScrollToTop from "react-scroll-to-top";
 import SiteHeader from "./header";
 import SiteFooter from "./footer";
 
@@ -13,6 +15,17 @@ const SEO = {
 
 const Site = (props) => {
   const { seo = SEO, isHome = false, isLogin = false, children } = props;
+  const [show, setShow] = useState(false);
+  console.log(show, "<<Apa");
+  useEffect(() => {
+    if (window.scrollY > 0) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  }, [show]);
+
+  function topFunction() {}
   return (
     <>
       <Head>
@@ -50,6 +63,21 @@ const Site = (props) => {
         )}
       </Head>
       <div>
+        {/* <Link href='#' scroll={true}>
+          <div id='myBtn' title='Go to top'>
+            Top
+          </div>
+        </Link> */}
+        <ScrollToTop
+          smooth
+          style={{
+            backgroundColor: "#4d295f",
+            width: "70px",
+            height: "70px",
+            color: "White",
+          }}
+          component={<h2>TOP</h2>}
+        />
         <SiteHeader isHome={isHome} isLogin={isLogin} />
         <main role='main'>{children}</main>
         <SiteFooter />

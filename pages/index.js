@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Site from "../component/layout/site";
@@ -6,6 +7,16 @@ import Skillselection from "../component/pages/home/skillselection";
 import Experience from "../component/pages/home/experience";
 import EducationSelection from "../component/pages/home/education";
 import Projectexperience from "../component/pages/home/projectexperience";
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 export default function Home() {
   return (
