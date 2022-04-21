@@ -71,7 +71,7 @@ const Site = (props) => {
         <ScrollToTop
           smooth
           style={{
-            backgroundColor: "#4d295f",
+            backgroundColor: "#d02532",
             width: "70px",
             height: "70px",
             color: "White",
@@ -80,7 +80,7 @@ const Site = (props) => {
         />
         <SiteHeader isHome={isHome} isLogin={isLogin} />
         <main role='main'>{children}</main>
-        <SiteFooter />
+        {/* <SiteFooter /> */}
       </div>
     </>
   );

@@ -21,31 +21,21 @@ ul{
   }
   .content_bg {
     z-index: -1;
-    position: absolute;
-    height: 800px;
     content: "";
-    background-color: rgb(221, 221, 221);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
+    background-color: #d02532;
     width: 100%;
     top: 0px;
     margin-left: auto;
     margin-right: auto;
     bottom: 70px;
-    left: auto;
- 
+    left: auto; 
     min-height: auto;
+    margin-bottom: -80px;
   }
   .bg-step {
     z-index: -1;
-    position: absolute;
-    content: "";
-    background-image: url("../public/bg-forground.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url("../public/bg-pattern-5.png"), linear-gradient(45deg, #BE1E2D 14.64%, #DB2935 85.36%);
+    background-repeat: repeat;
     position: absolute;
     width: 100%;
     height: 100%;

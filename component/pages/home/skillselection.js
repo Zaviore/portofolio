@@ -34,13 +34,12 @@ function Skillselection() {
     }
   };
   return (
-    <div>
-      <p className='text-center text-3xl font-bold mb-5 underline underline-offset-8 '>
-        Skill
-      </p>
-
-      <div className=' bg-cs-purple-dark text-white '>
-        <div className='overflow-x-auto flex flex-rows text-center mx-auto max-w-7xl'>
+    <div className=' max-w-full flex justify-center justify-items-center'>
+      <div className='shadow bg-white rounded-xl pb-3'>
+        <p className='text-center text-4xl font-bold m-5 text-cs-primary'>
+          Skill
+        </p>
+        <div className='overflow-x-auto flex flex-rows text-center mx-auto max-w-5xl'>
           <button
             className={
               scrollX !== 0
@@ -50,7 +49,7 @@ function Skillselection() {
             onClick={() => slide(-150)}
           >
             <div className='font-bold text-black'>
-              <ChevronLeftIcon className='h-5 w-5 text-white' />
+              <ChevronLeftIcon className='h-5 w-5 text-cs-primary' />
             </div>
           </button>
 
@@ -62,7 +61,9 @@ function Skillselection() {
             {" "}
             {skill.map((itm, index) => (
               <li className='py-2 md:px-3 min-w-[100px] text-center mr-20 mt-5 snap-center'>
-                <div key={index}>{itm.name}</div>
+                <div key={index} className='text-cs-gray font-bold'>
+                  {itm.name}
+                </div>
                 <div>{itm.icon}</div>
               </li>
             ))}
@@ -77,7 +78,7 @@ function Skillselection() {
             onClick={() => slide(+100)}
           >
             <div className='font-bold text-black'>
-              <ChevronRightIcon className='h-5 w-5 text-white' />
+              <ChevronRightIcon className='h-5 w-5 text-cs-primary' />
             </div>
           </button>
         </div>

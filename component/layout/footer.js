@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <div className='max-w-full -mt-10 bottom-0 text-white'>
+    <div className='max-w-full -mt-10 bottom-0 text-white '>
       <div className='bg-cs-footer  md:p-20 rounded-t-3xl '>
         <div className='grid md:grid-cols-12'>
           <div className='md:col-span-4'>

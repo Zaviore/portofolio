@@ -5,18 +5,19 @@ import effect from "../../../public/jojo.png";
 import email from "../../../public/email.png";
 import linkin from "../../../public/linkin-white.png";
 import github from "../../../public/github-white.png";
+import cloud from "../../../public/cloud.png";
 
 function Heroselection() {
   const ref = useRef();
   return (
     <div>
-      <div className='relative max-w-full '>
-        <div className='content_bg'></div>
+      <div className='relative max-w-full content_bg'>
+        <div className=''></div>
         <div className='max-w-7xl mx-auto px-4 md:grid grid-cols-2 gap-4 items-center sm:px-6'>
           <div className=''>
-            <p className='text-black text-3xl font-bold'>Hi, My Name</p>
-            <p className='text-cs-purple-dark text-7xl font-bold'>Zamhadi</p>
-            <p className='md:mr-56 text-black'>
+            <p className='text-white text-3xl font-bold'>Hi, My Name</p>
+            <p className='text-white text-7xl font-bold'>Zamhadi</p>
+            <p className='md:mr-56 text-white'>
               i'm frontend Developer, My job is Develop, improve, maintain, and
               publish high quality user-facing web. To Ensure apps that develop
               are cross-device compatible, adhere to our company-wide style
@@ -73,6 +74,9 @@ function Heroselection() {
             </div>
             <Image src={Banner} />
           </div>
+        </div>
+        <div className='bg-repeat-x h-8 w-full bg-contain'>
+          <Image src={cloud} />
         </div>
       </div>
     </div>

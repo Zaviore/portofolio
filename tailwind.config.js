@@ -25,8 +25,8 @@ module.exports = {
         "cs-blue": "#40A2B1",
         "cs-purple": "#405EB6",
         "cs-footer": "#b2a2b9",
-
-        "cs-gray": "#dddddd",
+        "cs-primary": "#d02532",
+        "cs-gray": "#6b7280",
         "cs-purple-dark": "#4d295f",
         "cs-purple-light": "#b04c84",
         "cs-blue-light": "#edf5fe",

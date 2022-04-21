@@ -6,7 +6,6 @@ function Experience() {
   return (
     <div>
       <p className='text-center font-bold text-3xl pt-20'>Work Experience</p>{" "}
-      <div className='bg-step'> &nbsp;</div>
       <div className='container mx-auto max-w-7xl py-20 relative'>
         <div className='flex flex-row space place-content-around flex-wrap '>
           {experience.map((itm, index) => (
