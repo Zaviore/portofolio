@@ -18,13 +18,16 @@ function EducationSelection() {
           </div>
         </div>
 
-        <div>
+        <div className='relative'>
           <div className='absolute mt-[-50px] ml-[-60px] -z-30 '>
             <Image src={circle} alt='' width='200px' height='200px' />
           </div>
+          <div className='absolute right-[-100px] bottom-0 mt-12 z-10'>
+            <Image src={bg} width='500px' height='300px' />
+          </div>
           <div className='min-h-[600px] max-w-7xl shadow-lg bg-white p-12 rounded-3xl '>
             {" "}
-            <div className='grid grid-cols-3 '>
+            <div className='grid grid-cols-3 relative'>
               {education.map((itm, idx) => (
                 <div className='p-5'>
                   <div style={{ transform: "translate(15px, -30px)" }}>
@@ -48,9 +51,6 @@ function EducationSelection() {
                   </div>
                 </div>
               ))}
-              <div className='absolute right-0 bottom-0'>
-                <Image src={bg} width='500px' height='300px' />
-              </div>
             </div>
           </div>
         </div>

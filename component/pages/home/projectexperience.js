@@ -3,7 +3,7 @@ import { project } from "../../dummy/project";
 
 function Projectexperience() {
   return (
-    <div className='bg-cs-purple-dark min-h-[800px]'>
+    <div className='bg-step min-h-[800px]'>
       <div className='text-center text-white font-bold p-6 text-3xl'>
         Project Experience
       </div>
@@ -16,7 +16,7 @@ function Projectexperience() {
                 <a
                   href={itm.url}
                   target='_blank'
-                  className='p-2 bg-cs-purple-dark rounded-2xl text-white'
+                  className='p-2 bg-cs-email rounded-2xl text-white'
                 >
                   visit webiste
                 </a>{" "}

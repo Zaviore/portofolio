@@ -1,34 +1,36 @@
 import React from "react";
-
+import Image from "next/image";
 import { experience } from "../../dummy/work";
 
 function Experience() {
   return (
     <div>
-      <p className='text-center font-bold text-3xl pt-20'>Work Experience</p>{" "}
-      <div className='container mx-auto max-w-7xl py-20 relative'>
-        <div className='flex flex-row space place-content-around flex-wrap '>
+      <p className='text-center font-bold text-4xl pt-28 text-cs-primary'>
+        Work Experience
+      </p>{" "}
+      <p className='text-center font-bold text-sm text-cs-gray'>
+        Daftar pengalaman kerja yang pernah berkerja sama dengan saya
+      </p>{" "}
+      <div className=''> &nbsp;</div>
+      <div className='container mx-auto max-w-5xl py-20 relative'>
+        <div className='space place-content-around flex-wrap '>
           {experience.map((itm, index) => (
-            <div className='relative py-4'>
-              <div className=''>
+            <div className='relative flex w-full border-dashed border-2 border-cs-primary rounded-full m-4'>
+              <div className='relative'>
                 <div
-                  className='min-h-[50px] rounded-t-3xl'
-                  style={{ backgroundColor: itm.color2 }}
+                  style={{ width: 300, height: 300 }}
+                  className='relative flex justify-center bg-cs-primary outline outline-4 outline-offset-0 outline-cs-primary mr-10 rounded-full'
                 >
-                  &nbsp;
-                </div>
-                <div
-                  style={{ backgroundColor: itm.color }}
-                  className='absolute top-[-5px] ml-28 p-3 flex justify-center content-center rounded-full outline  outline-4 outline-white'
-                >
-                  {itm.logo}
+                  <div className='relative bg-white w-full rounded-full'>
+                    {itm.logo}
+                  </div>
                 </div>
               </div>
-              <div className='max-w-xs bg-slate-100 text-center min-h-[200px] pt-16 p-10 rounded-b-3xl ease-in-out duration-300 shadow hover:shadow-xl '>
-                <div className='font-bold text-2xl underline'>
+              <div className='pt-7 pr-4'>
+                <div className='font-bold text-3xl text-cs-github'>
                   {itm.company}
                 </div>
-                <div className='py-3 text-2xl'>{itm.title}</div>
+                <div className='py-3 text-2xl text-cs-gray'>{itm.title}</div>
                 <div className='py-3'>{itm.date}</div>
 
                 <div>{itm.desc}</div>

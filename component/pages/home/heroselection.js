@@ -50,7 +50,7 @@ function Heroselection() {
               <a
                 href='https://drive.google.com/file/d/1MjEmASpUukPpQjMmvoFTBK4U4zcSUo6g/view'
                 target='_blank'
-                className='mr-5 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-cs-purple-dark hover:bg-gray-500'
+                className='mr-5 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-cs-gray bg-white hover:bg-gray-500'
               >
                 My Resume
               </a>
@@ -64,14 +64,6 @@ function Heroselection() {
             </div>
           </div>
           <div className='relative mb-16'>
-            <div className='z-10 absolute mt-8' ref={ref}>
-              <div className='ml-20 animate-pulse'>
-                <Image src={effect} width='100px' height='100px' />
-              </div>
-              <div className='duration-300 animate-pulse '>
-                <Image src={effect} width='100px' height='100px' />
-              </div>
-            </div>
             <Image src={Banner} />
           </div>
         </div>

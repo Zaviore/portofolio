@@ -1,21 +1,36 @@
-import telkom from "../../public/telkom.png";
-import freelance from "../../public/freelancer.svg";
+import telkom from "../../public/kantor.jpg";
+import freelance from "../../public/zam.jpg";
 
 import Image from "next/image";
 export const experience = [
   {
     logo: (
-      <Image src={freelance} alt='logo-telkom' width='70px' height='70px' />
+      <Image
+        src={freelance}
+        alt='logo-telkom'
+        width='300px'
+        height='300px'
+        className='relative rounded-full'
+      />
     ),
     color: "#B1DAFF",
     color2: "#62A8E8",
     title: "Freelancer Game",
     date: "september 2019 - february 2020",
     company: "Freelancer",
-    desc: "make a game based on a request from a customer",
+    desc:
+      "I made a game based on a request from a client. I sometimes make 3d or 2d games. I got this job from a freelancer site",
   },
   {
-    logo: <Image src={telkom} alt='logo-telkom' width='70px' height='70px' />,
+    logo: (
+      <Image
+        src={telkom}
+        alt='logo-telkom'
+        width='300px'
+        height='300px'
+        className='relative rounded-full'
+      />
+    ),
     color: "#FFDDE0",
     color2: "#AF1C29",
     title: "Web Developer",

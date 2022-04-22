@@ -33,7 +33,7 @@ module.exports = {
         "cs-pink": "#B23F74",
         "cs-linkedin": "#0a66c2",
         "cs-github": "#24292f",
-        "cs-email": "#d93025",
+        "cs-email": "#be1e2d",
         "cs-green": "#8BAC3E",
         "cs-green-light": "#A4B441",
         "cs-green-soft": "#F9FFF6",
