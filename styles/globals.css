@@ -20,7 +20,7 @@ ul{
     white-space: nowrap;
   }
   .content_bg {
-    z-index: -1;
+   
     content: "";
     background-color: #d02532;
     width: 100%;

@@ -24,7 +24,7 @@ function Heroselection() {
               guide, and matches the designed user experience and Doing test
               driven development.
             </p>
-            <div className='flex items-center mt-2 mr-8 '>
+            <div className='flex items-center mt-2 mr-8 z-10'>
               <a
                 href='https://www.linkedin.com/in/zamhadi/'
                 target='_blank'
@@ -46,18 +46,18 @@ function Heroselection() {
                 <Image src={email} width='20px' height='15px' />
               </a>
             </div>
-            <div className='flex items-center mt-10 mr-8 '>
+            <div className='flex items-center mt-10 mr-8 z-10'>
               <a
                 href='https://drive.google.com/file/d/1MjEmASpUukPpQjMmvoFTBK4U4zcSUo6g/view'
                 target='_blank'
-                className='mr-5 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-cs-gray bg-white hover:bg-gray-500'
+                className='mr-5 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-cs-gray bg-white hover:text-cs-primary'
               >
                 My Resume
               </a>
               <a
                 href='https://api.whatsapp.com/send?phone=6281277060233'
                 target='_blank'
-                className='whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-gray-500 hover:bg-gray-500'
+                className='whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-gray-500 hover:text-black'
               >
                 hire me
               </a>

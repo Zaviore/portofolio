@@ -34,7 +34,7 @@ function Skillselection() {
     }
   };
   return (
-    <div className=' max-w-full flex justify-center justify-items-center'>
+    <div className=' max-w-full flex justify-center justify-items-center z-10 relative'>
       <div className='shadow bg-white rounded-xl pb-3'>
         <p className='text-center text-4xl font-bold m-5 text-cs-primary'>
           Skill
