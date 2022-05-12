@@ -1,34 +1,23 @@
 import "../styles/globals.css";
 import { useRouter } from "next/router";
 
-function FacebookPixel() {
-  const Router = useRouter();
-  React.useEffect(() => {
+function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
     import("react-facebook-pixel")
       .then((x) => x.default)
       .then((ReactPixel) => {
-        ReactPixel.init("1027453168174179");
+        ReactPixel.init(1027453168174179); // facebookPixelId
         ReactPixel.pageView();
 
-        Router.events.on("routeChangeComplete", () => {
+        router.events.on("routeChangeComplete", () => {
           ReactPixel.pageView();
         });
       });
-  });
-  return null;
-}
-
-function MyApp({ Component, pageProps }) {
+  }, [router.events]);
   return (
     <div>
-      <Head>
-        <meta charSet='UTF-8' />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1, viewport-fit=cover'
-        />
-      </Head>
-      <FacebookPixel />
       <Component {...pageProps} />
     </div>
   );
