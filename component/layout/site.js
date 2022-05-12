@@ -30,7 +30,7 @@ const Site = (props) => {
       setShow(false);
     }
   }, [show]);
-  const disabled = !user.allowsThirdPartyCookies();
+  // const disabled = !user.allowsThirdPartyCookies();
   LinkedInTag.init(3892676, "dc", disabled);
   LinkedInTag.track(3892676);
   const router = useRouter();
