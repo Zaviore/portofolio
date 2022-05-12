@@ -6,7 +6,7 @@ import SiteHeader from "./header";
 import SiteFooter from "./footer";
 import { useRouter } from "next/router";
 import Script from "next/script";
-import { pageview, FB_PIXEL_ID } from "./fpixel";
+import { pageview } from "./fpixel";
 
 const SEO = {
   title: "Homepage",
@@ -100,7 +100,7 @@ const Site = (props) => {
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', ${FB_PIXEL_ID});
+        fbq('init', '1027453168174179');
         fbq('track', 'PageView');
       `}
         </Script>
