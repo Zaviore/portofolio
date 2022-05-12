@@ -5,7 +5,7 @@ import ScrollToTop from "react-scroll-to-top";
 import SiteHeader from "./header";
 import SiteFooter from "./footer";
 import { useRouter } from "next/router";
-import LinkedInTag from "react-linkedin-insight";
+// import LinkedInTag from "react-linkedin-insight";
 
 const SEO = {
   title: "Homepage",
@@ -31,8 +31,8 @@ const Site = (props) => {
     }
   }, [show]);
   // const disabled = !user.allowsThirdPartyCookies();
-  LinkedInTag.init(3892676, "dc", disabled);
-  LinkedInTag.track(3892676);
+  // LinkedInTag.init(3892676, "dc", disabled);
+  // LinkedInTag.track(3892676);
   const router = useRouter();
 
   useEffect(() => {
