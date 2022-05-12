@@ -3,10 +3,10 @@ import Head from "next/head";
 import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
 import SiteHeader from "./header";
-import SiteFooter from "./footer";
-import { useRouter } from "next/router";
-import Script from "next/script";
-import { pageview } from "./fpixel";
+// import SiteFooter from "./footer";
+// import { useRouter } from "next/router";
+// import Script from "next/script";
+// import { pageview } from "./fpixel";
 
 const SEO = {
   title: "Homepage",
@@ -15,23 +15,6 @@ const SEO = {
   url: "/",
   noIndex: false,
 };
-
-function FacebookPixel() {
-  const Router = useRouter();
-  React.useEffect(() => {
-    import("react-facebook-pixel")
-      .then((x) => x.default)
-      .then((ReactPixel) => {
-        ReactPixel.init("1027453168174179");
-        ReactPixel.pageView();
-
-        Router.events.on("routeChangeComplete", () => {
-          ReactPixel.pageView();
-        });
-      });
-  });
-  return null;
-}
 
 // const handleRouteChange = () => {
 //   pageview();
@@ -49,8 +32,6 @@ const Site = (props) => {
     }
   }, [show]);
   // const router = useRouter();
-
-  const router = useRouter();
 
   // useEffect(() => {
   //   // the below will only fire on route changes (not initial load - that is handled in the script below)
@@ -113,7 +94,7 @@ const Site = (props) => {
           </>
         )}
       </Head>
-      <FacebookPixel />
+
       <div>
         {/* <Link href='#' scroll={true}>
           <div id='myBtn' title='Go to top'>
@@ -130,7 +111,7 @@ const Site = (props) => {
           }}
           component={<h2>TOP</h2>}
         />
-        <FacebookPixel />
+
         <SiteHeader isHome={isHome} isLogin={isLogin} />
         <main role='main'>{children}</main>
         {/* <SiteFooter /> */}
