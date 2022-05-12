@@ -5,6 +5,8 @@ import ScrollToTop from "react-scroll-to-top";
 import SiteHeader from "./header";
 import SiteFooter from "./footer";
 import { useRouter } from "next/router";
+import Script from "next/script";
+import { pageview, FB_PIXEL_ID } from "./fpixel";
 
 const SEO = {
   title: "Homepage",
@@ -14,21 +16,25 @@ const SEO = {
   noIndex: false,
 };
 
-function FacebookPixel() {
-  React.useEffect(() => {
-    import("react-facebook-pixel")
-      .then((x) => x.default)
-      .then((ReactPixel) => {
-        ReactPixel.init("1027453168174179");
-        ReactPixel.pageView();
+// function FacebookPixel() {
+//   React.useEffect(() => {
+//     import("react-facebook-pixel")
+//       .then((x) => x.default)
+//       .then((ReactPixel) => {
+//         ReactPixel.init("1027453168174179");
+//         ReactPixel.pageView();
 
-        Router.events.on("routeChangeComplete", () => {
-          ReactPixel.pageView();
-        });
-      });
-  });
-  return null;
-}
+//         Router.events.on("routeChangeComplete", () => {
+//           ReactPixel.pageView();
+//         });
+//       });
+//   });
+//   return null;
+// }
+
+const handleRouteChange = () => {
+  pageview();
+};
 
 const Site = (props) => {
   const { seo = SEO, isHome = false, isLogin = false, children } = props;
@@ -43,6 +49,16 @@ const Site = (props) => {
   }, [show]);
   // const router = useRouter();
 
+  const router = useRouter();
+
+  useEffect(() => {
+    // the below will only fire on route changes (not initial load - that is handled in the script below)
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       <Head>
@@ -56,6 +72,7 @@ const Site = (props) => {
           href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap'
           rel='stylesheet'
         />
+
         <meta name='description' content={seo.description} key='description' />
         <meta name='keywords' content='{keywords}' />
         <meta
@@ -72,6 +89,22 @@ const Site = (props) => {
         />
         <meta property='og:image' content={seo.image} key='og:image' />
         <link rel='canonical' href={seo.url} />
+
+        <Script id='facebook-pixel'>
+          {`
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', ${FB_PIXEL_ID});
+        fbq('track', 'PageView');
+      `}
+        </Script>
+
         {seo.noIndex && (
           <>
             <meta name='robots' content='noindex'></meta>
