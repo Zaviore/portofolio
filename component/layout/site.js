@@ -16,25 +16,26 @@ const SEO = {
   noIndex: false,
 };
 
-// function FacebookPixel() {
-//   React.useEffect(() => {
-//     import("react-facebook-pixel")
-//       .then((x) => x.default)
-//       .then((ReactPixel) => {
-//         ReactPixel.init("1027453168174179");
-//         ReactPixel.pageView();
+function FacebookPixel() {
+  const Router = useRouter();
+  React.useEffect(() => {
+    import("react-facebook-pixel")
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init("1027453168174179");
+        ReactPixel.pageView();
 
-//         Router.events.on("routeChangeComplete", () => {
-//           ReactPixel.pageView();
-//         });
-//       });
-//   });
-//   return null;
-// }
+        Router.events.on("routeChangeComplete", () => {
+          ReactPixel.pageView();
+        });
+      });
+  });
+  return null;
+}
 
-const handleRouteChange = () => {
-  pageview();
-};
+// const handleRouteChange = () => {
+//   pageview();
+// };
 
 const Site = (props) => {
   const { seo = SEO, isHome = false, isLogin = false, children } = props;
@@ -51,13 +52,13 @@ const Site = (props) => {
 
   const router = useRouter();
 
-  useEffect(() => {
-    // the below will only fire on route changes (not initial load - that is handled in the script below)
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+  // useEffect(() => {
+  //   // the below will only fire on route changes (not initial load - that is handled in the script below)
+  //   router.events.on("routeChangeComplete", handleRouteChange);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleRouteChange);
+  //   };
+  // }, [router.events]);
 
   return (
     <>
@@ -90,7 +91,7 @@ const Site = (props) => {
         <meta property='og:image' content={seo.image} key='og:image' />
         <link rel='canonical' href={seo.url} />
 
-        <Script id='facebook-pixel'>
+        {/* <Script id='facebook-pixel'>
           {`
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -103,7 +104,7 @@ const Site = (props) => {
         fbq('init', '1027453168174179');
         fbq('track', 'PageView');
       `}
-        </Script>
+        </Script> */}
 
         {seo.noIndex && (
           <>
@@ -112,6 +113,7 @@ const Site = (props) => {
           </>
         )}
       </Head>
+      <FacebookPixel />
       <div>
         {/* <Link href='#' scroll={true}>
           <div id='myBtn' title='Go to top'>
