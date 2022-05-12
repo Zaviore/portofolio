@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  useEffect(() => {
+  React.useEffect(() => {
     import("react-facebook-pixel")
       .then((x) => x.default)
       .then((ReactPixel) => {
