@@ -5,8 +5,7 @@ import ScrollToTop from "react-scroll-to-top";
 import SiteHeader from "./header";
 import SiteFooter from "./footer";
 import { useRouter } from "next/router";
-import Script from "next/script";
-import { pageview } from "./fpixel";
+import LinkedInTag from "react-linkedin-insight";
 
 const SEO = {
   title: "Homepage",
@@ -31,16 +30,23 @@ const Site = (props) => {
       setShow(false);
     }
   }, [show]);
-  // const router = useRouter();
+  const disabled = !user.allowsThirdPartyCookies();
+  LinkedInTag.init(3892676, "dc", disabled);
+  LinkedInTag.track(3892676);
+  const router = useRouter();
 
-  // useEffect(() => {
-  //   // the below will only fire on route changes (not initial load - that is handled in the script below)
-  //   router.events.on("routeChangeComplete", handleRouteChange);
-  //   return () => {
-  //     router.events.off("routeChangeComplete", handleRouteChange);
-  //   };
-  // }, [router.events]);
+  useEffect(() => {
+    import("react-facebook-pixel")
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init("1027453168174179"); // facebookPixelId
+        ReactPixel.pageView();
 
+        router.events.on("routeChangeComplete", () => {
+          ReactPixel.pageView();
+        });
+      });
+  }, [router.events]);
   return (
     <>
       <Head>
@@ -71,21 +77,6 @@ const Site = (props) => {
         />
         <meta property='og:image' content={seo.image} key='og:image' />
         <link rel='canonical' href={seo.url} />
-
-        {/* <Script id='facebook-pixel'>
-          {`
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1027453168174179');
-        fbq('track', 'PageView');
-      `}
-        </Script> */}
 
         {seo.noIndex && (
           <>
