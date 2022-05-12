@@ -5,6 +5,7 @@ import ScrollToTop from "react-scroll-to-top";
 import SiteHeader from "./header";
 import SiteFooter from "./footer";
 import { useRouter } from "next/router";
+import ReactPixel from "react-facebook-pixel";
 
 const SEO = {
   title: "Homepage",
@@ -25,22 +26,20 @@ const Site = (props) => {
       setShow(false);
     }
   }, [show]);
-  const router = useRouter();
 
-  useEffect(() => {
-    import("react-facebook-pixel")
-      .then((x) => x.default)
-      .then((ReactPixel) => {
-        ReactPixel.init("1027453168174179"); // facebookPixelId
-        ReactPixel.pageView();
+  const advancedMatching = { em: "picasoekyc@gmail.com" }; // optional, more info: https://developers.facebook.com/docs/facebook-pixel/advanced/advanced-matching
+  const options = {
+    autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
+    debug: false, // enable logs
+  };
+  ReactPixel.init("1027453168174179", advancedMatching, options);
 
-        router.events.on("routeChangeComplete", () => {
-          ReactPixel.pageView();
-        });
-      });
-  }, [router.events]);
+  ReactPixel.pageView(); // For tracking page view
+  ReactPixel.track(event, data); // For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
+  ReactPixel.trackSingle("1027453168174179", event, data); // For tracking default events.
+  ReactPixel.trackCustom(event, data); // For tracking custom events. More info about custom events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#custom-events
+  ReactPixel.trackSingleCustom("1027453168174179", event, data); // For tracking custom events.
 
-  function topFunction() {}
   return (
     <>
       <Head>
