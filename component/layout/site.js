@@ -85,7 +85,7 @@ const Site = (props) => {
             <meta name='googlebot' content='noindex'></meta>
           </>
         )}
-        <Script
+        <script
           strategy='afterInteractive'
           dangerouslySetInnerHTML={{
             __html: `
