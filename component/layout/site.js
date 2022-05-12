@@ -3,10 +3,10 @@ import Head from "next/head";
 import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
 import SiteHeader from "./header";
-// import SiteFooter from "./footer";
-// import { useRouter } from "next/router";
-// import Script from "next/script";
-// import { pageview } from "./fpixel";
+import SiteFooter from "./footer";
+import { useRouter } from "next/router";
+import Script from "next/script";
+import { pageview } from "./fpixel";
 
 const SEO = {
   title: "Homepage",
