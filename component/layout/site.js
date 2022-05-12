@@ -5,7 +5,6 @@ import ScrollToTop from "react-scroll-to-top";
 import SiteHeader from "./header";
 import SiteFooter from "./footer";
 import { useRouter } from "next/router";
-import ReactPixel from "react-facebook-pixel";
 
 const SEO = {
   title: "Homepage",
@@ -14,6 +13,22 @@ const SEO = {
   url: "/",
   noIndex: false,
 };
+
+function FacebookPixel() {
+  React.useEffect(() => {
+    import("react-facebook-pixel")
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init("pixel ID here");
+        ReactPixel.pageView();
+
+        Router.events.on("routeChangeComplete", () => {
+          ReactPixel.pageView();
+        });
+      });
+  });
+  return null;
+}
 
 const Site = (props) => {
   const { seo = SEO, isHome = false, isLogin = false, children } = props;
@@ -26,19 +41,7 @@ const Site = (props) => {
       setShow(false);
     }
   }, [show]);
-
-  const advancedMatching = { em: "picasoekyc@gmail.com" }; // optional, more info: https://developers.facebook.com/docs/facebook-pixel/advanced/advanced-matching
-  const options = {
-    autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
-    debug: false, // enable logs
-  };
-  ReactPixel.init("1027453168174179", advancedMatching, options);
-
-  ReactPixel.pageView(); // For tracking page view
-  ReactPixel.track(event, data); // For tracking default events. More info about standard events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#standard-events
-  ReactPixel.trackSingle("1027453168174179", event, data); // For tracking default events.
-  ReactPixel.trackCustom(event, data); // For tracking custom events. More info about custom events: https://developers.facebook.com/docs/facebook-pixel/implementation/conversion-tracking#custom-events
-  ReactPixel.trackSingleCustom("1027453168174179", event, data); // For tracking custom events.
+  // const router = useRouter();
 
   return (
     <>
@@ -92,6 +95,7 @@ const Site = (props) => {
           }}
           component={<h2>TOP</h2>}
         />
+        <FacebookPixel />
         <SiteHeader isHome={isHome} isLogin={isLogin} />
         <main role='main'>{children}</main>
         {/* <SiteFooter /> */}
