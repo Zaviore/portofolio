@@ -1,10 +1,11 @@
 import "../styles/globals.css";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  React.useEffect(() => {
+  useEffect(() => {
     import("react-facebook-pixel")
       .then((x) => x.default)
       .then((ReactPixel) => {
@@ -16,11 +17,7 @@ function MyApp({ Component, pageProps }) {
         });
       });
   }, [router.events]);
-  return (
-    <div>
-      <Component {...pageProps} />
-    </div>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
