@@ -5,6 +5,7 @@ import ScrollToTop from "react-scroll-to-top";
 import SiteHeader from "./header";
 import SiteFooter from "./footer";
 import { useRouter } from "next/router";
+import Script from "next/script";
 // import LinkedInTag from "react-linkedin-insight";
 
 const SEO = {
