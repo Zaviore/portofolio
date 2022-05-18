@@ -86,7 +86,7 @@ const Site = (props) => {
           </>
         )}
 
-        <Script id='facebook-pixel'>
+        <Script>
           {`
        _linkedin_partner_id = "3892676";
        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
