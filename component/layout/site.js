@@ -39,18 +39,18 @@ const Site = (props) => {
     LinkedInTag.track(3892676);
   }, [router.events]);
 
-  useEffect(() => {
-    import("react-facebook-pixel")
-      .then((x) => x.default)
-      .then((ReactPixel) => {
-        ReactPixel.init("1027453168174179"); // facebookPixelId
-        ReactPixel.pageView();
+  // useEffect(() => {
+  //   import("react-facebook-pixel")
+  //     .then((x) => x.default)
+  //     .then((ReactPixel) => {
+  //       ReactPixel.init("1027453168174179"); // facebookPixelId
+  //       ReactPixel.pageView();
 
-        router.events.on("routeChangeComplete", () => {
-          ReactPixel.pageView();
-        });
-      });
-  }, [router.events]);
+  //       router.events.on("routeChangeComplete", () => {
+  //         ReactPixel.pageView();
+  //       });
+  //     });
+  // }, [router.events]);
 
   return (
     <>
