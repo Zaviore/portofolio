@@ -37,7 +37,7 @@ const Site = (props) => {
   useEffect(() => {
     LinkedInTag.init(3892676, "dc", disabled);
     LinkedInTag.track(3892676);
-  }, []);
+  }, [router.events]);
 
   useEffect(() => {
     import("react-facebook-pixel")
