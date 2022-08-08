@@ -34,53 +34,55 @@ function Skillselection() {
     }
   };
   return (
-    <div className=' max-w-full flex justify-center justify-items-center z-10 relative'>
-      <div className='shadow bg-white rounded-xl pb-3'>
-        <p className='text-center text-4xl font-bold m-5 text-cs-primary'>
-          Skill
-        </p>
-        <div className='overflow-x-auto flex flex-rows text-center mx-auto max-w-5xl'>
-          <button
-            className={
-              scrollX !== 0
-                ? " md:m-5 p-2 transition delay-150 shadow rounded-full "
-                : " md:m-5 p-2 transition delay-150 shadow rounded-full invisible "
-            }
-            onClick={() => slide(-150)}
-          >
-            <div className='font-bold text-black'>
-              <ChevronLeftIcon className='h-5 w-5 text-cs-primary' />
-            </div>
-          </button>
+    <div className='container max-w-full flex justify-center justify-items-center relative'>
+      <div className='z-10 '>
+        <div className='shadow bg-white rounded-xl pb-3'>
+          <p className='text-center text-4xl font-bold m-5 text-cs-primary'>
+            Skill
+          </p>
+          <div className='overflow-x-auto flex flex-rows text-center mx-auto max-w-5xl'>
+            <button
+              className={
+                scrollX !== 0
+                  ? " md:m-5 p-2 transition delay-150 shadow rounded-full "
+                  : " md:m-5 p-2 transition delay-150 shadow rounded-full invisible "
+              }
+              onClick={() => slide(-150)}
+            >
+              <div className='font-bold text-black'>
+                <ChevronLeftIcon className='h-5 w-5 text-cs-primary' />
+              </div>
+            </button>
 
-          <ul
-            ref={scrl}
-            onScroll={scrollCheck}
-            className='snap-x scroll-smooth'
-          >
-            {" "}
-            {skill.map((itm, index) => (
-              <li className='py-2 md:px-3 min-w-[100px] text-center mr-20 mt-5 snap-center'>
-                <div key={index} className='text-cs-gray font-bold'>
-                  {itm.name}
-                </div>
-                <div>{itm.icon}</div>
-              </li>
-            ))}
-          </ul>
+            <ul
+              ref={scrl}
+              onScroll={scrollCheck}
+              className='snap-x scroll-smooth'
+            >
+              {" "}
+              {skill.map((itm, index) => (
+                <li className='py-2 md:px-3 min-w-[100px] text-center mr-20 mt-5 snap-center'>
+                  <div key={index} className='text-cs-gray font-bold'>
+                    {itm.name}
+                  </div>
+                  <div>{itm.icon}</div>
+                </li>
+              ))}
+            </ul>
 
-          <button
-            className={
-              !scrolEnd
-                ? "md:m-5 p-2 shadow rounded-full"
-                : "md:m-5 p-2 shadow bg-white rounded-full invisible "
-            }
-            onClick={() => slide(+100)}
-          >
-            <div className='font-bold text-black'>
-              <ChevronRightIcon className='h-5 w-5 text-cs-primary' />
-            </div>
-          </button>
+            <button
+              className={
+                !scrolEnd
+                  ? "md:m-5 p-2 shadow rounded-full"
+                  : "md:m-5 p-2 shadow bg-white rounded-full invisible "
+              }
+              onClick={() => slide(+100)}
+            >
+              <div className='font-bold text-black'>
+                <ChevronRightIcon className='h-5 w-5 text-cs-primary' />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>

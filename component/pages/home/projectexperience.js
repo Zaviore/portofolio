@@ -10,7 +10,7 @@ function Projectexperience() {
       <div className='container mx-auto max-w-7xl'>
         <div className='grid md:grid-cols-3 gap-12 p-5'>
           {project.map((itm) => (
-            <div className='bg-white p-5 rounded-2xl'>
+            <div className='bg-white p-5 rounded-2xl flex flex-col justify-between'>
               <div className='rounded-2xl '>{itm.icon}</div>
               <div className='text-center p-2'>
                 <a
