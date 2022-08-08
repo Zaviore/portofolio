@@ -149,53 +149,42 @@ export default function Example() {
               <div className='mt-6'>
                 <nav className='grid gap-y-8'>
                   <a
-                    href='#'
-                    className='text-base font-medium text-white hover:text-gray-900'
-                  >
-                    Home
-                  </a>
-                  <a
-                    href='#'
+                    href='#about'
                     className='text-base font-medium text-white hover:text-gray-900'
                   >
                     About
                   </a>
+
                   <a
-                    href='#'
+                    href='#skill'
                     className='text-base font-medium text-white hover:text-gray-900'
                   >
-                    Promotions
+                    Skill
                   </a>
                   <a
-                    href='#'
+                    href='#education'
                     className='text-base font-medium text-white hover:text-gray-900'
                   >
-                    Blogs
+                    Education
                   </a>
                   <a
-                    href='#'
+                    href='#experience'
                     className='text-base font-medium text-white hover:text-gray-900'
                   >
-                    Contact Us
+                    Experience
+                  </a>
+
+                  <a
+                    href='#portopolo'
+                    className='text-base font-medium text-white hover:text-gray-900'
+                  >
+                    Portopolio
                   </a>
                 </nav>
               </div>
             </div>
             <div className='py-2 px-5 space-y-6'>
-              <div>
-                <a
-                  href='#'
-                  className='w-full flex items-cente  r justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-cs-green hover:bg-cs-green-light'
-                >
-                  Sign up
-                </a>
-                <p className='mt-6 text-center text-base font-medium text-white'>
-                  Existing customer?{" "}
-                  <a href='#' className='text-indigo-600 hover:text-indigo-500'>
-                    Sign in
-                  </a>
-                </p>
-              </div>
+              <div></div>
             </div>
           </div>
         </Popover.Panel>
