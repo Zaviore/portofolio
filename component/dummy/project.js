@@ -2,7 +2,7 @@ import js from "../../public/corona.png";
 import landexpres from "../../public/landexpress.png";
 import picaso from "../../public/picaso.png";
 import picaso2 from "../../public/picaso2.png";
-import picaso3 from "../../public/fr.png";
+import picaso3 from "../../public/facepage.png";
 import picaso4 from "../../public/solution.png";
 
 import Image from "next/image";

@@ -27,7 +27,7 @@ function EducationSelection() {
           </div>
           <div className='min-h-[600px] max-w-7xl shadow-lg bg-white p-12 rounded-3xl '>
             {" "}
-            <div className='grid grid-cols-3 relative'>
+            <div className='grid grid-cols-3 sm:grid-cols-12 relative '>
               {education.map((itm, idx) => (
                 <div className='p-5'>
                   <div style={{ transform: "translate(15px, -30px)" }}>
