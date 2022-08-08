@@ -16,10 +16,6 @@ const SEO = {
   noIndex: false,
 };
 
-// const handleRouteChange = () => {
-//   pageview();
-// };
-
 const Site = (props) => {
   const { seo = SEO, isHome = false, isLogin = false, children } = props;
   const [show, setShow] = useState(false);
@@ -31,26 +27,6 @@ const Site = (props) => {
       setShow(false);
     }
   }, [show]);
-  // const disabled = !user.allowsThirdPartyCookies();
-  const router = useRouter();
-
-  useEffect(() => {
-    LinkedInTag.init(3892676, "dc", disabled);
-    LinkedInTag.track(3892676);
-  }, [router.events]);
-
-  // useEffect(() => {
-  //   import("react-facebook-pixel")
-  //     .then((x) => x.default)
-  //     .then((ReactPixel) => {
-  //       ReactPixel.init("1027453168174179"); // facebookPixelId
-  //       ReactPixel.pageView();
-
-  //       router.events.on("routeChangeComplete", () => {
-  //         ReactPixel.pageView();
-  //       });
-  //     });
-  // }, [router.events]);
 
   return (
     <>
@@ -92,11 +68,6 @@ const Site = (props) => {
       </Head>
 
       <div>
-        {/* <Link href='#' scroll={true}>
-          <div id='myBtn' title='Go to top'>
-            Top
-          </div>
-        </Link> */}
         <ScrollToTop
           smooth
           style={{
