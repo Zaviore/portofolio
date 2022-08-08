@@ -6,7 +6,10 @@ import bg from "../../../public/bg.svg";
 
 function EducationSelection() {
   return (
-    <div className='relative container mx-auto max-w-full flex justify-center mt-24'>
+    <div
+      className='relative container mx-auto max-w-full flex justify-center mt-24'
+      id='education'
+    >
       <div>
         <div className='m-12'>
           <div className='text-center font-bold text-4xl text-cs-primary '>
@@ -27,9 +30,9 @@ function EducationSelection() {
           </div>
           <div className='min-h-[600px] max-w-7xl shadow-lg bg-white p-12 rounded-3xl '>
             {" "}
-            <div className='grid grid-cols-3 sm:grid-cols-12 relative '>
+            <div className='grid lg:grid-cols-3  relative'>
               {education.map((itm, idx) => (
-                <div className='p-5'>
+                <div className='p-5 grid-cols-12'>
                   <div style={{ transform: "translate(15px, -30px)" }}>
                     <div className='p-6 px-16 md:min-w-[86%] bg-cs-primary rounded-xl text-white'>
                       <div className='w-28 h-28 bg-white flex items-center justify-center rounded-full shadow ml-12'>

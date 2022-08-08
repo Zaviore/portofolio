@@ -10,7 +10,7 @@ import cloud from "../../../public/cloud.png";
 function Heroselection() {
   const ref = useRef();
   return (
-    <div>
+    <div id='about'>
       <div className='relative max-w-full content_bg'>
         <div className=''></div>
         <div className='max-w-7xl mx-auto px-4 md:grid grid-cols-2 gap-4 items-center sm:px-6'>

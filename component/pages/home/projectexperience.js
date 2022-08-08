@@ -3,7 +3,7 @@ import { project } from "../../dummy/project";
 
 function Projectexperience() {
   return (
-    <div className='bg-step min-h-[600px]'>
+    <div className='bg-step min-h-[600px]' id='portopolo'>
       <div className='text-center text-white font-bold p-6 text-3xl'>
         Project Experience
       </div>

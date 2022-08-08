@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import {
   BookmarkAltIcon,
@@ -13,6 +13,9 @@ import {
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import Logo from "../../public/logo-panjang.png";
 import Image from "next/image";
+import Link from "next/link";
+
+import { useRouter } from "next/router";
 
 const resources = [
   {
@@ -49,8 +52,20 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const [pathHastag, setPathHastag] = useState("");
+  const { pathname, events } = useRouter();
+
+  useEffect(() => {
+    const onHashChangeStart = (url) => {
+      setPathHastag(url);
+    };
+    events.on("hashChangeStart", onHashChangeStart);
+    return () => {
+      events.off("hashChangeStart", onHashChangeStart);
+    };
+  }, [events]);
   return (
-    <Popover className='mx-auto sticky bg-cs-primary z-10 '>
+    <Popover className='mx-auto fixed w-full bg-cs-primary z-50 '>
       <div className='max-w-7xl mx-auto px-4 sm:px-6'>
         <div className='flex justify-between items-center py-2 md:justify-start md:space-x-10'>
           <div className='flex justify-start lg:w-0 lg:flex-1'>
@@ -66,36 +81,36 @@ export default function Example() {
           </div>
           <Popover.Group as='nav' className='hidden md:flex space-x-10'>
             <a
-              href='#'
+              href='#about'
               className='text-base font-medium text-white hover:text-gray-900'
             >
               About
             </a>
 
             <a
-              href='#'
+              href='#skill'
               className='text-base font-medium text-white hover:text-gray-900'
             >
               Skill
             </a>
             <a
-              href='#'
+              href='#education'
+              className='text-base font-medium text-white hover:text-gray-900'
+            >
+              Education
+            </a>
+            <a
+              href='#experience'
               className='text-base font-medium text-white hover:text-gray-900'
             >
               Experience
             </a>
 
             <a
-              href='#'
+              href='#portopolo'
               className='text-base font-medium text-white hover:text-gray-900'
             >
               Portopolio
-            </a>
-            <a
-              href='#'
-              className='text-base font-medium text-white hover:text-gray-900'
-            >
-              Contact Me
             </a>
           </Popover.Group>
         </div>

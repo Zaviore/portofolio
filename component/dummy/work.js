@@ -10,7 +10,7 @@ export const experience = [
         alt='logo-telkom'
         width='300px'
         height='300px'
-        className='relative rounded-full'
+        className='relative rounded-md lg:rounded-full'
       />
     ),
     color: "#B1DAFF",
@@ -28,7 +28,7 @@ export const experience = [
         alt='logo-telkom'
         width='300px'
         height='300px'
-        className='relative rounded-full'
+        className='relative lg:rounded-full'
       />
     ),
     color: "#FFDDE0",

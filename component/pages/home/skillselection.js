@@ -34,9 +34,12 @@ function Skillselection() {
     }
   };
   return (
-    <div className='container max-w-full flex justify-center justify-items-center relative'>
+    <div
+      className='container max-w-full flex justify-center justify-items-center relative'
+      id='skill'
+    >
       <div className='z-10 '>
-        <div className='shadow bg-white rounded-xl pb-3'>
+        <div className='container max-w-sm md:max-w-full shadow bg-white rounded-xl pb-3'>
           <p className='text-center text-4xl font-bold m-5 text-cs-primary'>
             Skill
           </p>

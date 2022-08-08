@@ -75,6 +75,7 @@ const Site = (props) => {
             width: "70px",
             height: "70px",
             color: "White",
+            zIndex: 99,
           }}
           component={<h2>TOP</h2>}
         />
