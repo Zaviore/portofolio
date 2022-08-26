@@ -12,7 +12,7 @@ function Experience() {
         Daftar pengalaman kerja yang pernah berkerja sama dengan saya
       </p>{" "}
       <div className=''> &nbsp;</div>
-      <div className='container mx-auto max-w-5xl py-20 relative'>
+      <div className='container mx-auto max-w-4xl py-20 relative'>
         <div className='space place-content-around flex-wrap flex-col'>
           {experience.map((itm, index) => (
             <div className='relative flex w-full border-dashed lg:border-2 lg:border-cs-primary rounded-full m-4 flex-col-reverse lg:flex-row'>
