@@ -25,8 +25,8 @@ function EducationSelection() {
           <div className='absolute mt-[-50px] ml-[-60px] -z-30 '>
             <Image src={circle} alt='' width='200px' height='200px' />
           </div>
-          <div className='absolute right-[-100px] bottom-0 mt-12 z-10'>
-            <Image src={bg} width='500px' height='300px' />
+          <div className='hidden md:block absolute right-[-100px] bottom-0 mt-12 z-10'>
+            <Image src={bg} width='300px' height='300px' />
           </div>
           <div className='min-h-[600px] max-w-7xl shadow-lg bg-white p-12 rounded-3xl '>
             {" "}
