@@ -47,23 +47,10 @@ const resources = [
   },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Example() {
   const [pathHastag, setPathHastag] = useState("");
   const { pathname, events } = useRouter();
 
-  useEffect(() => {
-    const onHashChangeStart = (url) => {
-      setPathHastag(url);
-    };
-    events.on("hashChangeStart", onHashChangeStart);
-    return () => {
-      events.off("hashChangeStart", onHashChangeStart);
-    };
-  }, [events]);
   return (
     <Popover className='mx-auto fixed w-full bg-cs-primary z-50 '>
       <div className='max-w-7xl mx-auto px-4 sm:px-6'>

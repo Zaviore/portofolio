@@ -18,7 +18,7 @@ function Projectexperience() {
                   target='_blank'
                   className='p-2 bg-cs-email rounded-2xl text-white'
                 >
-                  visit webiste
+                  visit website
                 </a>{" "}
               </div>
             </div>
